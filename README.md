@@ -229,7 +229,7 @@ The output of the second convolutional layer is 36 images of 7x7 pixels each. Th
 It is difficult to see from these images what the purpose of the convolutional filters might be. It appears that they have merely created several variations of the input image, as if light was shining from different angles and casting shadows in the image.
 
 #### Second Convolutional Layer
-From these images, it looks like the second convolutional layer might detect lines and patterns in the input images, which are less sensitive to local variations in the original input images.
+From these images, it looks like the second convolutional layer might detect lines and patterns in the input images.
 
 ![](image/cnn_layer_output.png)
 <p align="center">
@@ -238,7 +238,7 @@ Figure 15. Convolutional layer outputs for the optimized CNN
 
 
 # Conclusion
-The Convolutional Neural Network is much better at recognizing doodles than the baseline machine learning models. The Convolutional Network is also much more complicated to implement, and, because of its complexity, its internal structure is semi-opaque and its failure modes hard to analyze.
+The Convolutional Neural Network is much better at recognizing doodles than the baseline machine learning models. The Convolutional Network is also much more complicated to implement, and because of its complexity, its internal structure is semi-opaque and its failure modes hard to analyze.
 
 It's also evident that, of the hyperparameter optimization search procedures available, Bayesian optimization is clearly superior.
 
