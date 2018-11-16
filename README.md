@@ -20,7 +20,7 @@ Secondary objectives include:
 
 # Strategy
 #### 1. Data Transformation
-#### 2. Exploratory Data analysis
+#### 2. Exploratory Data Analysis
 #### 3. Machine Learning Modeling
 - Naive Bayes Classifier
 - Decision Tree Classifier
@@ -106,9 +106,9 @@ From the above classification report, we can see that the Gradient boosting mode
 
 # Convolutional Neural Network
 ## 1. Model Comparison
-### Non-Optimized CNN (Accuracy: 84%) v.s. Optimized CNN (Accuracy: 94%)
+### Non-Optimized CNN (Accuracy: 83%) v.s. Optimized CNN (Accuracy: 94%)
 
-The optimized Convolutional Neural Network achieved a classification accuracy of about 94%, compared to only 84% for the non-optimized Convolutional Neural Network.
+The optimized Convolutional Neural Network achieved a classification accuracy of about 94%, compared to only 83% for the non-optimized Convolutional Neural Network.
 
 ![](image/roc_cnn.png)
 <p align="center">
@@ -171,6 +171,8 @@ Below are the second set of hyper-parameters used to optimize the convolutional 
     - The number of nodes for each of the dense layers
     - Batch size
     - The number of epochs
+
+![](image/parameters.png)
 
 #### Distribution for the Combination of the Hyperparameters
 Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improves the model validation accuracy.
