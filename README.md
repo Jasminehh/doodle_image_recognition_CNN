@@ -1,4 +1,4 @@
-# Doodle Image Recognition with Convolutional Neural Network
+# Doodle Image Recognition with CNN
 
 ## Jasmine He
 
@@ -19,19 +19,19 @@ Secondary objectives include:
 
 
 # Strategy
-* Data Transformation
-* Exploratory Data analysis
-* Machine Learning Modeling
- * Naive Bayes Classifier
- * Decision Tree Classifier
- * Random Forest Classifier
- * Gradient Boosting Classifier
-* Convolutional Neural Network
- * Model Comparison
- * Optimization Method Comparison
- * Bayesian Optimization Result
- * Optimized CNN Structure
- * Convolutional Layer Output Visualization
+#### 1. Data Transformation
+#### 2. Exploratory Data analysis
+#### 3. Machine Learning Modeling
+- Naive Bayes Classifier
+- Decision Tree Classifier
+- Random Forest Classifier
+- Gradient Boosting Classifier
+#### 4. Convolutional Neural Network
+- Model Comparison
+- Optimization Method Comparison
+- Bayesian Optimization Result
+- Optimized CNN Structure
+- Convolutional Layer Output Visualization
 
 
 # Data Overview
@@ -172,7 +172,7 @@ Below are the second set of hyper-parameters used to optimize the convolutional 
     - Batch size
     - The number of epochs
 
-##### Distribution for the Combination of the Hyperparameters
+#### Distribution for the Combination of the Hyperparameters
 Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improves the model validation accuracy.
 
 ![](image/cnn_scatter_gp.png)
@@ -180,7 +180,7 @@ Figure 10 shows the distribution for the combination of the hyper-parameter used
 Figure 10. Distribution for the combination of the hyperparameters
 </p>
 
-##### Partial Dependence
+#### Partial Dependence
 Figure 11 shows which parameters affect the model the most -- with bigger partial dependency fluctuation corresponding to bigger effects. From the graph it's apparent that learning rate has the biggest impact on model performance, with the number of dense nodes coming in second.
 
 ![](image/cnn_partialDep_gp.png)
