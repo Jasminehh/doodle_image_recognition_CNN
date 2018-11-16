@@ -19,18 +19,19 @@ Secondary objectives include:
 
 
 # Strategy
-### 1. Data Transformation
-### 2. Exploratory Data analysis
-### 3. Machine Learning Modeling
-#### 1). Naive Bayes Classifier
-#### 2). Decision Tree Classifier
-#### 3). Random Forest Classifier
-#### 4). Gradient Boosting Classifier
-### 4. Convolutional Neural Network
-#### 1). Non-optimized CNN v.s. Optimized CNN
-#### 2). Bayesian Optimization
-#### 3). Optimized CNN Structure
-
+* Data Transformation
+* Exploratory Data analysis
+* Machine Learning Modeling
+ * Naive Bayes Classifier
+ * Decision Tree Classifier
+ * Random Forest Classifier
+ * Gradient Boosting Classifier
+* Convolutional Neural Network
+ * Model Comparison
+ * Optimization Method Comparison
+ * Bayesian Optimization Result
+ * Optimized CNN Structure
+ * Convolutional Layer Output Visualization
 
 
 # Data Overview
@@ -57,6 +58,7 @@ The drawing feature is a list of strokes, with each stroke being a list of x,y v
 # Data Transformation
 
 All the simplified drawings have been rendered into a 28x28 grayscale bitmap. These images were generated from the simplified data, but are aligned to the center of the drawing's bounding box rather than the top-left corner. Each of these resultant drawings are fuzzier than the originals because they are expressed in fewer dimensions.
+
 
 ![](image/image_trans.png)
 <p align="center">
@@ -103,23 +105,24 @@ Figure 5. Classification reports of machine learning models (class 0: duck, clas
 From the above classification report, we can see that the Gradient boosting model has the highest accuracy (83.7%). Moreover, all models performed best when classifying ducks (class 0) and worst when classifying monkeys (class 2).
 
 # Convolutional Neural Network
-## Model Comparison (Non-Optimized CNN v.s. Optimized CNN)
+## 1. Model Comparison
+### Non-Optimized CNN (Accuracy: 84%) v.s. Optimized CNN (Accuracy: 94%)
 
 The optimized Convolutional Neural Network achieved a classification accuracy of about 94%, compared to only 84% for the non-optimized Convolutional Neural Network.
 
 ![](image/roc_cnn.png)
 <p align="center">
-Figure 6. ROC curves of non-optimized CNN and optimized CNN
+Figure 6. ROC curves of non-optimized CNN and optimized CNN (class 0: duck, class 1: lion, class 2: monkey, class 3: panda)
 </p>
 
 
 ![](image/cnn_report.png)
 <p align="center">
-Figure 7. Classification reports of non-optimized CNN and optimized CNN
+Figure 7. Classification reports of non-optimized CNN and optimized CNN (class 0: duck, class 1: lion, class 2: monkey, class 3: panda)
 </p>
 
 
-## Hyperparameter Optimization Comparison
+## 2. Hyperparameter Optimization Comparison
 
 Convolutional Neural Networks afford the opportunity to tune a variety of parameters, usually called hyperparameters. Examples of hyperparameters include the number of hidden layers, the number of neurons per layer, which activation function is to be applied at each neuron, and so on.
 
@@ -142,7 +145,7 @@ Figure 8. Chart for optimization comparison
 </p>
 
 
-## Bayesian Optimization Result
+## 3.  Bayesian Optimization Result
 I used the sklearn-optimize library's built-in Bayesian optimization to find the optimized hyper-parameters.
 
 ### First Set of Hyperparameters
@@ -169,7 +172,7 @@ Below are the second set of hyper-parameters used to optimize the convolutional 
     - Batch size
     - The number of epochs
 
-#### Distribution for the Combination of the Hyperparameters
+##### Distribution for the Combination of the Hyperparameters
 Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improves the model validation accuracy.
 
 ![](image/cnn_scatter_gp.png)
@@ -177,7 +180,7 @@ Figure 10 shows the distribution for the combination of the hyper-parameter used
 Figure 10. Distribution for the combination of the hyperparameters
 </p>
 
-#### Partial Dependence
+##### Partial Dependence
 Figure 11 shows which parameters affect the model the most -- with bigger partial dependency fluctuation corresponding to bigger effects. From the graph it's apparent that learning rate has the biggest impact on model performance, with the number of dense nodes coming in second.
 
 ![](image/cnn_partialDep_gp.png)
@@ -186,7 +189,7 @@ Figure 11. Partial dependence for the second set of hyperparameters
 </p>
 
 
-## Prediction Visualization of the Optimized CNN
+## 4. Prediction Visualization of the Optimized CNN
 
 Figure 12 shows examples of images from the test-set that have been classified correctly. Figure 13 shows mis-classified examples. The true and predicted classes below each image.
 
@@ -204,7 +207,7 @@ Figure 12. Subsamples for the correct predictions
 Figure 13. Subsamples for the incorrect predictions
 </p>
 
-## Optimized Convolutional Neural Network Structure
+## 5. Optimized Convolutional Neural Network Structure
 Figure 14 shows roughly how the data flow in the best-performing Convolutional Neural Network. Each of the first two convolutional layers feeds their respective outputs into their respective max-pooling layer, which results in down-sampling. After the second max-pooling there follows five additional fully-connected layers, with the final layer being a softmax-classifier.
 
 ![](image/best_cnn_str.png)
@@ -213,7 +216,7 @@ Figure 14. Flowchart for the optimized CNN
 </p>
 
 
-## Convolutional Layer Output Visualization
+## 6. Convolutional Layer Output Visualization
 The input image is processed in the first convolutional layer using the filter-weights. This results in 16 new images, one for each filter in the convolutional layer. The images are also down-sampled so the image resolution is decreased from 28x28 to 14x14.
 
 These 16 smaller images are then processed in the second convolutional layer. There are 36 output channels so there are a total of 16 x 36 = 576 filters in the second convolutional layer. The resulting images are down-sampled again to 7x7 pixels.
