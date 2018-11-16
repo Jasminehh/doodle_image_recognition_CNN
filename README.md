@@ -1,8 +1,8 @@
 # Doodle Image Recognition with CNN
 
-## Jasmine He
+By Jasmine He November, 2018
 
-![](image/cnn_str.png)
+![](image/profolio_new.png)
 
 # Introduction
 Google released the "Quick, Draw!"  data set as an exercise in AI education. The game functions by eliciting user-generated drawings of images representing categories like 'table' or 'lion'.
@@ -67,9 +67,11 @@ Figure 1. Flowchart for data transformation
 
 # Exploratory Data Analysis
 
-## 2D Embedding Plot
-Principal Component Analysis works by creating linear transformations of data into
-'principal components' which explain an equivalent amount of variance but in one fewer dimension. When this is done over a whole dataset the number of dimensions can be radically reduced without a concomitant loss in variance.
+## PCA Visualization
+
+Principal Component Analysis works by creating linear transformations of data into 'principal components' which explain an equivalent amount of variance but in one fewer dimension. When this is done over a whole dataset the number of dimensions can be radically reduced without a concomitant loss in variance.
+
+### 2D Embedding Plot
 
 Since it is difficult to visualize high-dimensional data, we can use PCA to find the first two principal components and visualize the data in this new, two-dimensional space, with a single scatter-plot.
 
@@ -80,7 +82,7 @@ The plot below shows how the various categories of drawings (monkey, lion, panda
 Figure 2. 2D embedding plot (class 0: duck, class 1: lion, class 2: monkey, class 3: panda)
 </p>
 
-## 3D Embeddding Plot
+### 3D Embeddding Plot
 We can also use Principal component analysis to find the first three principal components, and visualize the data in this new, three-dimensional space.
 ![](image/embedding_plot_3d.gif)
 <p align="center">
@@ -175,7 +177,7 @@ Below are the second set of hyper-parameters used to optimize the convolutional 
 ![](image/parameters.png)
 
 #### Distribution for the Combination of the Hyperparameters
-Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improves the model validation accuracy.
+Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improve the model validation accuracy.
 
 ![](image/cnn_scatter_gp.png)
 <p align="center">
@@ -229,7 +231,7 @@ The output of the second convolutional layer is 36 images of 7x7 pixels each. Th
 It is difficult to see from these images what the purpose of the convolutional filters might be. It appears that they have merely created several variations of the input image, as if light was shining from different angles and casting shadows in the image.
 
 #### Second Convolutional Layer
-From these images, it looks like the second convolutional layer might detect lines and patterns in the input images.
+From these images, it looks like the second convolutional layer can detect lines and patterns in the input images.
 
 ![](image/cnn_layer_output.png)
 <p align="center">
@@ -253,6 +255,6 @@ It's also evident that, of the hyperparameter optimization search procedures ava
 - Peter, I., Frazier (2018). A Tutorial on Bayesian Optimization, arXiv:1807.02811
 - https://sigopt.com/
 - https://github.com/Hvass-Labs/TensorFlow-Tutorials
+- AI picture source: http://gobeyondpink.com/beepsdetail/ai-can-detect-skin-cancer-perfectly-than-dermatologists/10
 
-
-Copyright @ Jasmine He
+Copyright © 2018 Jasmine He
