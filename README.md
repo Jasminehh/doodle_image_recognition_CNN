@@ -77,7 +77,7 @@ Since it is difficult to visualize high-dimensional data, we can use PCA to find
 
 The plot below shows how the various categories of drawings (monkey, lion, panda, duck) are described by the two principal components for a random sub-sample of 5000 drawings.
 
-![](image/embedding_plot.png)
+![](image/embedding_plot_new.png)
 <p align="center">
 Figure 2. 2D embedding plot (class 0: duck, class 1: lion, class 2: monkey, class 3: panda)
 </p>
@@ -253,6 +253,7 @@ It's also evident that, of the hyperparameter optimization search procedures ava
 
 # Reference
 - Peter, I., Frazier (2018). A Tutorial on Bayesian Optimization, arXiv:1807.02811
+- https://github.com/googlecreativelab/quickdraw-dataset#the-raw-moderated-dataset
 - https://sigopt.com/
 - https://github.com/Hvass-Labs/TensorFlow-Tutorials
 - AI picture source: http://gobeyondpink.com/beepsdetail/ai-can-detect-skin-cancer-perfectly-than-dermatologists/10
