@@ -86,7 +86,7 @@ Figure 3. 3D embedding plot (class 0: duck, class 1: lion, class 2: monkey, clas
 </p>
 
 # Machine Learning Modeling
-For my baseline machine learning models I applied a Naive Bayes Classifier, Decision Tree Classifier, Random Forest Classifier and Gradient Boosting Classifier to the 28*28 drawings (yielding 786 features per drawing).
+For the baseline machine learning models I applied a Naive Bayes Classifier, Decision Tree Classifier, Random Forest Classifier and Gradient Boosting Classifier to the 28*28 drawings (yielding 786 features per drawing).
 
 ### ROC Curves
 ![](image/roc_base_models.png)
@@ -107,18 +107,19 @@ From the above classification report, we can see that the Gradient boosting mode
 
 The optimized Convolutional Neural Network achieved a classification accuracy of about 94%, compared to only 84% for the non-optimized Convolutional Neural Network.
 
-<p align="center">
 ![](image/roc_cnn.png)
+<p align="center">
 Figure 6. ROC curves of non-optimized CNN and optimized CNN
 </p>
 
-<p align="center">
+
 ![](image/cnn_report.png)
+<p align="center">
 Figure 7. Classification reports of non-optimized CNN and optimized CNN
 </p>
 
 
-## Hyper-Parameter Optimization Comparison
+## Hyperparameter Optimization Comparison
 
 Convolutional Neural Networks afford the opportunity to tune a variety of parameters, usually called hyperparameters. Examples of hyperparameters include the number of hidden layers, the number of neurons per layer, which activation function is to be applied at each neuron, and so on.
 
@@ -135,8 +136,8 @@ Bayesian optimization, on the other hand, builds a posterior distribution of can
 
 Figure 8 shows Bayesian optimization finds a better optimum in a smaller number of steps than random search.
 
-<p align="center">
 ![](image/optimization_comparison.png)
+<p align="center">
 Figure 8. Chart for optimization comparison
 </p>
 
@@ -144,7 +145,7 @@ Figure 8. Chart for optimization comparison
 ## Bayesian Optimization Result
 I used the sklearn-optimize library's built-in Bayesian optimization to find the optimized hyper-parameters.
 
-### First Set of Hyper-Parameters
+### First Set of Hyperparameters
 Below is the first set of hyper-parameters used to optimize the convolutional neural network:
 
     - The learning-rate of the optimizer
@@ -152,14 +153,14 @@ Below is the first set of hyper-parameters used to optimize the convolutional ne
     - The number of nodes for each of the dense layers
     - Whether to use 'sigmoid' or 'relu' activation in all the layers
 
-<p align="center">
 ![](image/cnn_activation.png)
+<p align="center">
 Figure 9. Visualization for the first set of hyper-parameter optimization result
 </p>
 
 As you can see from figure 9, on average 'relu' activation performs better than the 'sigmoid' activation, so I will choose relu activation for the model.
 
-### Second Set of Hyper-Parameters
+### Second Set of Hyperparameters
 Below are the second set of hyper-parameters used to optimize the convolutional neural network:
 
     - The learning-rate of the optimizer
@@ -171,16 +172,16 @@ Below are the second set of hyper-parameters used to optimize the convolutional 
 #### Distribution for the Combination of the Hyperparameters
 Figure 10 shows the distribution for the combination of the hyper-parameter used in the Bayesian optimization. Learning rate follows a gaussian distribution. The larger number of dense layers and the larger number of dense nodes for each layer improves the model validation accuracy.
 
-<p align="center">
 ![](image/cnn_scatter_gp.png)
+<p align="center">
 Figure 10. Distribution for the combination of the hyperparameters
 </p>
 
 #### Partial Dependence
 Figure 11 shows which parameters affect the model the most -- with bigger partial dependency fluctuation corresponding to bigger effects. From the graph it's apparent that learning rate has the biggest impact on model performance, with the number of dense nodes coming in second.
 
-<p align="center">
 ![](image/cnn_partialDep_gp.png)
+<p align="center">
 Figure 11. Partial dependence for the second set of hyperparameters
 </p>
 
@@ -190,14 +191,16 @@ Figure 11. Partial dependence for the second set of hyperparameters
 Figure 12 shows examples of images from the test-set that have been classified correctly. Figure 13 shows mis-classified examples. The true and predicted classes below each image.
 
 #### Visualization of the Correct Predictions
-<p align="center">
+
 ![](image/cnn_correct_pred.png)
+<p align="center">
 Figure 12. Subsamples for the correct predictions
 </p>
 
 #### Visualization of the Incorrect Predictions
-<p align="center">
+
 ![](image/cnn_incorrect_pred.png)
+<p align="center">
 Figure 13. Subsamples for the incorrect predictions
 </p>
 
@@ -223,9 +226,8 @@ It is difficult to see from these images what the purpose of the convolutional f
 #### Second Convolutional Layer
 From these images, it looks like the second convolutional layer might detect lines and patterns in the input images, which are less sensitive to local variations in the original input images.
 
-
-<p align="center">
 ![](image/cnn_layer_output.png)
+<p align="center">
 Figure 15. Convolutional layer outputs for the optimized CNN
 </p>
 
@@ -242,7 +244,6 @@ It's also evident that, of the hyperparameter optimization search procedures ava
 - Visualize outputs of the fully-connected layers to see how the model capture the features among different categories.
 
 
-
 # Reference
 - Peter, I., Frazier (2018). A Tutorial on Bayesian Optimization, arXiv:1807.02811
 - https://sigopt.com/
@@ -250,4 +251,3 @@ It's also evident that, of the hyperparameter optimization search procedures ava
 
 
 Copyright @ Jasmine He
-# doodle_image_recognition_CNN
