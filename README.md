@@ -1,4 +1,4 @@
-# Doodle Image Recognition with CNN
+# Google Doodle Image Recognition with CNN
 
 By Jasmine He November, 2018
 
